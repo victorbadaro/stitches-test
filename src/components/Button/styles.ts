@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../styles/utils';
 
 export const Container = styled('button', {
   padding: '8px 16px',
