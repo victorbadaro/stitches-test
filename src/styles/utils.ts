@@ -1,4 +1,5 @@
-import { createStitches } from "@stitches/react";
+import { createStitches } from '@stitches/react';
+import { rgba } from 'polished';
 
 export const { styled, css } = createStitches({
   utils: {
@@ -36,6 +37,15 @@ export const { styled, css } = createStitches({
     // Abbreviated border-radius property
     br: (value) => ({
       borderRadius: value
-    })
+    }),
+
+    // A similar rgba function that accepts hexadecimals values
+    transparentBackground: (value) => {
+      const [color, opacity] = String(value).split(' ');
+
+      return {
+        backgroundColor: rgba(color, Number(opacity))
+      };
+    }
   }
 });
